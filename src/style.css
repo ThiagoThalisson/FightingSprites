@@ -1,0 +1,14 @@
+@import url("reset.css");
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+}
+
+canvas {
+    width: 100%;
+    
+}
