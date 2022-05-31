@@ -1,11 +1,7 @@
 {
   "name": "fighting-sprites",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/AtomicFeasT/FightningSprites.git",
-  "author": "AtomicFeasT <atomic-feast@hotmail.com>",
-  "license": "MIT",
-  "private": false,
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
     "commit": "cz"
   },
@@ -15,8 +11,6 @@
     }
   },
   "devDependencies": {
-    "commitizen": "^4.2.4",
-    "stylelint": "^14.8.5",
-    "typescript": "^4.7.2"
+    "commitizen": "^4.2.4"
   }
 }
