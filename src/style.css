@@ -6,9 +6,17 @@ html {
 
 body {
     display: flex;
+    align-items: center;
+    height: 100%;
+    
+    padding: 1em;
 }
 
 canvas {
     width: 100%;
-    
+    height: 90%;
+
+    background: rgb(233, 233, 233);
+    border-radius: 1em;
+
 }
