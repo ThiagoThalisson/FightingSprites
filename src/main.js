@@ -4,7 +4,7 @@ const canvasContext = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 768
 
-const gravity = 0.2
+const gravity = 0.3
 class Sprite {
     constructor({position, velocity, color = 'red', offset}) {
         this.position = position
@@ -31,10 +31,10 @@ class Sprite {
         canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
         
         // Attack Box
-        // if (this.isAttacking == true) {
+        if (this.isAttacking == true) {
             canvasContext.fillStyle = 'green'
             canvasContext.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height) 
-        // } 
+        } 
     } 
     
     update() {
@@ -157,14 +157,21 @@ function animate() {
         enemy.velocity.x = 5
     }
     
-    if (player.attackBox.position.x + player.attackBox.width >= enemy.position.x 
-        && player.attackBox.position.x <= enemy.position.x + enemy.width 
-        && player.attackBox.position.y + player.attackBox.height >= enemy.position.y 
-        && player.attackBox.position.y <= enemy.position.y + enemy.height &&
-        player.isAttacking) {
+    if (retangularCollision({
+        rectangle1: player,
+        rectangle2: enemy
+    }) && player.isAttacking) {
             player.isAttacking = false
             console.log("You've been hit")
         }
+    if (retangularCollision({
+        rectangle1: enemy,
+        rectangle2: player
+    }) && enemy.isAttacking) {
+            enemy.isAttacking = false
+            console.log("You've been hit")
+        }
+
     }
     
     animate()
@@ -193,19 +200,24 @@ function animate() {
         }
         
         switch (event.key) {
+            case 'Shift':
+                enemy.attack()
+            break
             case 'ArrowUp': 
-            enemy.velocity.y = -10
+                enemy.velocity.y = -10
             break
             case 'ArrowRight':
-            keys.ArrowRight.pressed = true
-            enemy.lastKey = 'ArrowRight'
+                keys.ArrowRight.pressed = true
+                enemy.lastKey = 'ArrowRight'
+                enemy.attackBox.offset.x = 0
             break
             case 'ArrowDown':
-            enemy.velocity.y = 3
+                enemy.velocity.y = 3
             break
             case 'ArrowLeft':
-            keys.ArrowLeft.pressed = true
-            enemy.lastKey = 'ArrowLeft'
+                keys.ArrowLeft.pressed = true
+                enemy.lastKey = 'ArrowLeft'
+                enemy.attackBox.offset.x = -50 
             break
         }
         console.log(event.key)
