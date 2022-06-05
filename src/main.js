@@ -80,7 +80,7 @@ const player = new Sprite({
 
 const enemy = new Sprite({
     position: {
-        x: 985,
+        x: 965,
         y: 0
     },
     velocity: {
@@ -162,14 +162,14 @@ function animate() {
         rectangle2: enemy
     }) && player.isAttacking) {
             player.isAttacking = false
-            console.log("You've been hit")
+            document.querySelector('#enemyHealth').style.width = '20%'
         }
     if (retangularCollision({
         rectangle1: enemy,
         rectangle2: player
     }) && enemy.isAttacking) {
             enemy.isAttacking = false
-            console.log("You've been hit")
+            console.log("You've been hit by the enemy")
         }
 
     }
@@ -189,9 +189,6 @@ function animate() {
                 player.lastKey = 'a'
                 player.attackBox.offset.x = -50
             break
-            case 's':
-                player.velocity.y = 3
-            break
             case 'd':
                 player.attackBox.offset.x = 0 
                 keys.d.pressed = true
@@ -210,10 +207,7 @@ function animate() {
                 keys.ArrowRight.pressed = true
                 enemy.lastKey = 'ArrowRight'
                 enemy.attackBox.offset.x = 0
-            break
-            case 'ArrowDown':
-                enemy.velocity.y = 3
-            break
+            break 
             case 'ArrowLeft':
                 keys.ArrowLeft.pressed = true
                 enemy.lastKey = 'ArrowLeft'

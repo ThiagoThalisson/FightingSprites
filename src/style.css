@@ -7,6 +7,7 @@ html {
 body {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     
     padding: 1em;
@@ -16,7 +17,55 @@ canvas {
     width: 100%;
     height: 90%;
 
-    background: rgb(233, 233, 233);
+    background-color: rgb(233, 233, 233);
     border-radius: 1em;
 
+}
+
+.container {
+    position: relative;
+}
+
+.health-bar-wrapper {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    content: '';
+    position: absolute; 
+    z-index: 99; 
+}
+.player-health {
+    width: 100%;
+    height: 3rem;
+    background-color: hsl(48, 98%, 54%);
+}
+
+.enemy-health {
+    height: 3rem;
+    background-color: hsl(48, 98%, 54%);
+    border-radius: 1rem;
+}
+
+.enemy-health-wrapper {
+    width: 100%;
+    height: 3rem;
+    position: relative;
+}
+
+.enemy-health-display {
+    height: 3rem;
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* background-color: blue; */
+}
+
+.timer {
+    width: 6rem;
+    height: 6rem;
+    background-color: hsl(0, 50%, 50%);
+    flex-shrink: 0;
 }
