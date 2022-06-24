@@ -121,8 +121,6 @@ const keys = {
     }
 }
 
-let lasKey 
-
 function retangularCollision({rectangle1, rectangle2}) {
     return(
         rectangle1.attackBox.position.x + rectangle1.attackBox.width >= rectangle2.position.x 
@@ -171,8 +169,8 @@ function animate() {
             enemy.isAttacking = false
             console.log("You've been hit by the enemy")
         }
-
     }
+
     
     animate()
     
