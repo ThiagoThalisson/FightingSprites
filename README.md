@@ -9,7 +9,8 @@ Making this would not be possible without <a target="_blank" href="https://www.y
 <h3>Technologies And Packages</h3>
 <a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">
   <img align="center" alt="JS" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-</a>
+</a><br>
+<br>
 
 <ul>
   <li><a target="_blank" href="https://yarnpkg.com/"><i>Yarn</i></a></li>
