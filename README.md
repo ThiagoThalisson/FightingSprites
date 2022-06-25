@@ -19,14 +19,14 @@ Making this would not be possible without <a target="_blank" href="https://www.y
   <li><a target="_blank" href="https://github.com/commitizen/cz-cli"><i>Commitizien</i></a></li>
 </ul>
 
-<h3>Idea Shaping</h3>
+<h4>Idea Shaping</h4>
 <ul>
   <li>
     <a target="_blank" href="https://www.youtube.com/watch?v=vyqbNFMDRGQ">Chris Course JavaScript Fightning Game Tutorial</a>
   </li>
 </ul>
 
-<h3>License</h3>
+<h5>License</h5>
 
 This project is under the Apache license. See the [LICENSE](LICENSE) file for details.
 
