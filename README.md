@@ -1,4 +1,4 @@
-<h1 align="center">🤺 <a href="#">Fighting Sprites</a></h1>
+<h1 id="Sprites" align="center">🤺 <a href="#">Fighting Sprites</a></h1>
 
 🤺 A simple and flashy fighting game.
 
@@ -26,4 +26,4 @@ Making this would not be possible without <a target="_blank" href="https://www.y
 
 This project is under the Apache license. See the [LICENSE](LICENSE) file for details.
 
-[⬆ Back To Top](#YesCakes)<br>
+[⬆ Back To Top](#Sprites)<br>
