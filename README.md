@@ -8,11 +8,12 @@ Making this would not be possible without <a target="_blank" href="https://www.y
 
 <h3>Technologies And Packages</h3>
 <div style="display: inline"> 
-<a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">
-  <img align="center" alt="JS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-</a>
-</div>
+  <a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">
+    <img align="center" alt="JS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  </a>
+</div> <br>
 <br>
+
 <ul>
   <li><a target="_blank" href="https://yarnpkg.com/"><i>Yarn</i></a></li>
   <li><a target="_blank" href="https://github.com/commitizen/cz-cli"><i>Commitizien</i></a></li>
@@ -20,7 +21,9 @@ Making this would not be possible without <a target="_blank" href="https://www.y
 
 <h3>Idea Shaping</h3>
 <ul>
-  <li><a target="_blank" href="https://www.youtube.com/watch?v=vyqbNFMDRGQ">Chris Course JavaScript Fightning Game Tutorial</a></li>
+  <li>
+    <a target="_blank" href="https://www.youtube.com/watch?v=vyqbNFMDRGQ">Chris Course JavaScript Fightning Game Tutorial</a>
+  </li>
 </ul>
 
 <h3>License</h3>
