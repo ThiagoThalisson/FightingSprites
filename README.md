@@ -2,11 +2,11 @@
 
 🤺 A simple and flashy fighting game.
 
-<h2>Purpose</h2>
+<h1>Purpose</h1>
 This project is made to improve my knowledge in javascript while having some fun building a game! <br> 
 Making this would not be possible without <a target="_blank" href="https://www.youtube.com/watch?v=vyqbNFMDRGQ">Chris Course Video Tutorial!</a>
 
-<h3>Technologies And Packages</h3>
+<h2>Technologies And Packages</h2>
 <div style="display: inline"> 
   <a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">
     <img align="center" alt="JS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
@@ -19,14 +19,14 @@ Making this would not be possible without <a target="_blank" href="https://www.y
   <li><a target="_blank" href="https://github.com/commitizen/cz-cli"><i>Commitizien</i></a></li>
 </ul>
 
-<h4>Idea Shaping</h4>
+<h3>Idea Shaping</h3>
 <ul>
   <li>
     <a target="_blank" href="https://www.youtube.com/watch?v=vyqbNFMDRGQ">Chris Course JavaScript Fightning Game Tutorial</a>
   </li>
 </ul>
 
-<h5>License</h5>
+<h4>License</h4>
 
 This project is under the Apache license. See the [LICENSE](LICENSE) file for details.
 
