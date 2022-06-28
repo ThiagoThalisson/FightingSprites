@@ -28,7 +28,7 @@ canvas {
 
 .health-bar-wrapper {
     width: 100%;
-
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,35 +37,37 @@ canvas {
     position: absolute; 
     z-index: 99; 
 }
+
+.player-health-wrapper {
+    display: flex;    
+    justify-content: flex-end;
+}
+
+.enemy-health-wrapper,
+.player-health-wrapper {
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    background-color: blue;
+}
+
+.enemy-health,
 .player-health {
     width: 100%;
     height: 3rem;
     background-color: hsl(48, 98%, 54%);
 }
 
-.enemy-health {
-    height: 3rem;
-    background-color: hsl(48, 98%, 54%);
-    border-radius: 1rem;
-}
-
-.enemy-health-wrapper {
-    width: 100%;
-    height: 3rem;
-    position: relative;
-}
-
-.enemy-health-display {
-    height: 3rem;
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* background-color: blue; */
-}
-
 .timer {
+    font-size: 2rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
     width: 6rem;
     height: 6rem;
+    
     background-color: hsl(0, 50%, 50%);
-    flex-shrink: 0;
 }

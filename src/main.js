@@ -23,7 +23,7 @@ class Sprite {
         }
         this.color = color
         this.isAttacking   
-    
+        this.health = 100
     }
 
     draw() {
@@ -130,6 +130,22 @@ function retangularCollision({rectangle1, rectangle2}) {
     )
 }
 
+let timer = 5 
+function decreaseTimer() {
+    if (timer > 0) {
+        setTimeout(decreaseTimer, 1000)
+        timer--
+        document.querySelector('#timer').innerHTML =  timer
+    }
+
+    if (player.health === enemy.health && timer === 0) {
+        console.log('Tie')
+    }
+
+}
+
+decreaseTimer()
+
 function animate() {
     window.requestAnimationFrame(animate)
     canvasContext.fillStyle = "black"
@@ -160,14 +176,16 @@ function animate() {
         rectangle2: enemy
     }) && player.isAttacking) {
             player.isAttacking = false
-            document.querySelector('#enemyHealth').style.width = '20%'
+            enemy.health -= 10
+            document.querySelector('#enemyHealth').style.width = enemy.health + '%'
         }
     if (retangularCollision({
         rectangle1: enemy,
         rectangle2: player
     }) && enemy.isAttacking) {
             enemy.isAttacking = false
-            console.log("You've been hit by the enemy")
+            player.health -= 10
+            document.querySelector('#playerHealth').style.width = player.health + '%'
         }
     }
 
