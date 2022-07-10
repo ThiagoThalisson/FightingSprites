@@ -1,17 +1,32 @@
 class Sprite {
-    constructor({ position }) {
+    constructor({ position, imageSrc, scale = 1, framesMax = 1}) {
         this.position = position
         this.width = 50
         this.height = 130 
+        this.image = new Image()
+        this.image.src = imageSrc
+        this.scale = scale
+        this.framesMax = framesMax
     }
 
     draw() {
+        canvasContext.drawImage(
+            this.image, 
 
+            0,
+            0,
+            this.image.width / this.framesMax,
+            this.image.height, 
+
+            this.position.x, 
+            this.position.y, 
+            (this.image.width / this.framesMax) * this.scale, 
+            this.image.height * this.scale
+        )
        } 
     
     update() {
         this.draw()
-       
     }
     
 }
