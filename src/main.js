@@ -33,9 +33,16 @@ const player = new Fighter({
         x: 0,
         y: 0
     },
+    // offset: {
+    //     x: 0,
+    //     y: 0
+    // },
+    imageSrc: '../public/samuraiMack/Idle.png',
+    framesMax: 8,
+    scale: 2.5,
     offset: {
-        x: 0,
-        y: 0
+        x: 215,
+        y: 175
     }
 })
 
@@ -48,11 +55,17 @@ const enemy = new Fighter({
         x: 0,
         y: 0
     },
+    // offset: {
+    //     x: -50,
+    //     y: 0
+    // },
+    imageSrc: '../public/kenji/Idle.png',
+    framesMax: 4,
+    scale: 2.5,
     offset: {
-        x: -50,
-        y: 0
-    },
-    color: 'blue'
+        x: 215,
+        y: 190
+    }
 })
 
 const keys = {
@@ -148,12 +161,12 @@ function animate() {
             case 'a':
                 keys.a.pressed = true
                 player.lastKey = 'a'
-                player.attackBox.offset.x = -50
+                // player.attackBox.offset.x = -50
             break
             case 'd':
-                player.attackBox.offset.x = 0 
                 keys.d.pressed = true
                 player.lastKey = 'd'
+                // player.attackBox.offset.x = 0 
             break
         }
         
@@ -167,12 +180,10 @@ function animate() {
             case 'ArrowRight':
                 keys.ArrowRight.pressed = true
                 enemy.lastKey = 'ArrowRight'
-                enemy.attackBox.offset.x = 0
             break 
             case 'ArrowLeft':
                 keys.ArrowLeft.pressed = true
                 enemy.lastKey = 'ArrowLeft'
-                enemy.attackBox.offset.x = -50 
             break
         }
         console.log(event.key)
