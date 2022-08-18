@@ -1,3 +1,4 @@
+// * Sprite Class And All It's Properties
 class Sprite {
   constructor({
     position,
@@ -11,7 +12,9 @@ class Sprite {
     this.height = 130
     this.image = new Image()
     this.image.src = imageSrc
+
     this.scale = scale
+
     this.framesMax = framesMax
     this.framesCurrent = 0
     this.framesElapsed = 0
@@ -20,6 +23,7 @@ class Sprite {
     this.offset = offset
   }
 
+  // Draw Images
   draw() {
     canvasContext.drawImage(
       this.image,
@@ -35,6 +39,7 @@ class Sprite {
     )
   }
 
+  // Animate All Frames
   animateFrames() {
     this.framesElapsed++
 
@@ -47,22 +52,25 @@ class Sprite {
     }
   }
 
+  // Refresh All Frames
   update() {
     this.draw()
     this.animateFrames()
   }
 }
+// ! End
 
+// * Fighter Class And All It's Properties
 class Fighter extends Sprite {
   constructor({
-    position,
-    velocity,
-    color = "red",
-    scale = 1,
     framesMax = 1,
     imageSrc,
-    offset = { x: 0, y: 0 },
     sprites = {},
+    position,
+    velocity,
+    scale = 1,
+    offset = { x: 0, y: 0 },
+    attackBox = { offset: {}, width: undefined, height: undefined },
   }) {
     super({
       position,
@@ -83,13 +91,12 @@ class Fighter extends Sprite {
         x: this.position.x,
         y: this.position.y,
       },
-      offset,
-      width: 100,
-      height: 50,
+      offset: attackBox.offset,
+      width: attackBox.width,
+      height: attackBox.height,
     }
     this.isAttacking
 
-    this.color = color
     this.health = 100
 
     this.framesCurrent = 0
@@ -106,28 +113,27 @@ class Fighter extends Sprite {
     console.log(this.sprites)
   }
 
-  // draw() {
-  //     canvasContext.fillStyle = this.color
-  //     canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
-
-  //     // Attack Box
-  //     if (this.isAttacking == true) {
-  //         canvasContext.fillStyle = 'green'
-  //         canvasContext.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
-  //     }
-  // }
-
+  // Update Method
   update() {
     this.draw()
     this.animateFrames()
 
+    // Attack Calculations
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x
-    this.attackBox.position.y = this.position.y
+    this.attackBox.position.y = this.position.y + this.attackBox.offset.y
+
+    // * Renders Where The AttackBox Is
+    canvasContext.fillRect(
+      this.attackBox.position.x,
+      this.attackBox.position.y,
+      this.attackBox.width,
+      this.attackBox.height
+    )
 
     this.position.x += this.velocity.x
     this.position.y += this.velocity.y
 
-    // Gravity Function
+    // Gravity Calculations
     if (this.position.y + this.height + this.velocity.y >= canvas.height) {
       this.velocity.y = 0
       this.position.y = 638
@@ -136,14 +142,24 @@ class Fighter extends Sprite {
     }
   }
 
+  // Attack Method
   attack() {
+    this.switchSprite("attack1")
     this.isAttacking = true
-    setTimeout(() => {
-      this.isAttacking = false
-    }, 100)
+
+    // setTimeout(() => {
+    //   this.isAttacking = false
+    // }, 100)
   }
 
+  // Switch Sprites Method
   switchSprite(sprite) {
+    if (
+      this.image === this.sprites.attack1.image &&
+      this.framesCurrent < this.sprites.attack1.framesMax - 1
+    )
+      return
+
     switch (sprite) {
       case "idle":
         if (this.image !== this.sprites.idle.image) {
@@ -168,6 +184,7 @@ class Fighter extends Sprite {
           this.framesCurrent = 0
         }
         break
+
       case "fall":
         if (this.image !== this.sprites.fall.image) {
           this.image = this.sprites.fall.image
@@ -175,6 +192,15 @@ class Fighter extends Sprite {
           this.framesCurrent = 0
         }
         break
+
+      case "attack1":
+        if (this.image !== this.sprites.attack1.image) {
+          this.image = this.sprites.attack1.image
+          this.framesMax = this.sprites.attack1.framesMax
+          this.framesCurrent = 0
+        }
+        break
     }
   }
 }
+// ! End
