@@ -1,85 +1,116 @@
 @import url("reset.css");
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    
-    padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  padding: 1em;
 }
 
 canvas {
-    width: 100%;
-    height: 90%;
+  width: 100%;
+  height: 90%;
 
-    background-color: rgb(233, 233, 233);
-    border-radius: 1em;
-
+  background-color: rgb(233, 233, 233);
+  border-radius: 1em;
 }
 
 .container {
-    position: relative;
+  position: relative;
 }
 
 .health-bar-wrapper {
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    content: '';
-    position: absolute; 
-    z-index: 99; 
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-inline: 2rem;
+
+  content: "";
+  position: absolute;
+  z-index: 99;
 }
 
 .player-health-wrapper {
-    display: flex;    
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.enemy-health-wrapper,
+.player-health-wrapper,
+.enemy-health,
+.player-health {
+  width: 100%;
+  height: 2rem;
 }
 
 .enemy-health-wrapper,
 .player-health-wrapper {
-    width: 100%;
-    height: 3rem;
-    position: relative;
-    background-color: blue;
+  position: relative;
+  background-color: #ea580c;
 }
 
 .enemy-health,
 .player-health {
-    width: 100%;
-    height: 3rem;
-    background-color: hsl(48, 98%, 54%);
+  background-color: #eab308;
 }
 
-.timer {
-    font-size: 2rem;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+.player-health {
+    background-color: #CE2038;
+}
 
-    width: 6rem;
-    height: 6rem;
-    
-    background-color: hsl(0, 50%, 50%);
+.enemy-health {
+    background-color: #2C3185;
+}
+
+
+.timer {
+  font-size: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  width: 6rem;
+  height: 4rem;
+
+  background-color: hsl(40, 20%, 50%);
 }
 
 .winner-label {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: none;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
 
-    position: absolute;   
+  position: absolute;
+}
+
+@media only screen and (max-width: 425px) {
+    .enemy-health-wrapper,
+    .player-health-wrapper,
+    .enemy-health,
+    .player-health {
+        width: 100%;
+        height: 1rem;
+    }
+
+    .timer {
+        font-size: .75rem;
+        width: 3.5rem;
+        height: 2.5rem;
+    }
+    
 }
