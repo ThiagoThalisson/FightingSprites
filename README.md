@@ -1,4 +1,4 @@
-<h1 id="Sprites" align="center">🤺 <a href="#">Fighting Sprites</a></h1>
+<h1 id="Sprites" align="center">🤺 <a href="https://atomicfeast.github.io/FightningSprites/src/">Fighting Sprites</a></h1>
 
 🤺 A simple and flashy fighting game.
 
