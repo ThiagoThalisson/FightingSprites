@@ -44,7 +44,16 @@ const player = new Fighter({
       framesMax: 8,
     },
     run: {
-      imageSrc: "../public/samuraiMack/Idle.png",
+      imageSrc: "../public/samuraiMack/Run.png",
+      framesMax: 8,
+    },
+    jump: {
+      imageSrc: "../public/samuraiMack/Jump.png",
+      framesMax: 2,
+    },
+    fall: {
+      imageSrc: "../public/samuraiMack/Fall.png",
+      framesMax: 2,
     },
   },
   scale: 2.5,
@@ -119,8 +128,19 @@ function animate() {
   // If Statements For The Player
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5
+    player.switchSprite("run")
   } else if (keys.d.pressed && player.lastKey === "d") {
     player.velocity.x = 5
+    player.switchSprite("run")
+  } else {
+    player.switchSprite("idle")
+  }
+
+  // Jumping
+  if (player.velocity.y < 0) {
+    player.switchSprite("jump")
+  } else if (player.velocity.y > 0) {
+    player.switchSprite("fall")
   }
 
   // If Statements For The Enemy
