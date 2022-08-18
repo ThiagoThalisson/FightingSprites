@@ -169,7 +169,7 @@ const keys = {
 }
 
 window.addEventListener("keydown", (event) => {
-  if (!player.dead) {
+  if (!enemy.dead && !player.dead) {
     switch (event.key) {
       case " ":
         player.attack()
@@ -188,9 +188,7 @@ window.addEventListener("keydown", (event) => {
         // player.attackBox.offset.x = 0
         break
     }
-  }
 
-  if (!enemy.dead) {
     switch (event.key) {
       case "Shift":
         enemy.attack()
